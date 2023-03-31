@@ -1,0 +1,45 @@
+<header>
+    <div class="top">
+        <div class="burgerMenu">
+            <i class="fas fa-bars fa-2x"></i>
+        </div>
+        <div>
+            <a href="/"><img class="logo" src="/images/logo ug 2.jpg" /></a>
+        </div>
+        <nav>
+            <ul class="ingreso">
+
+
+                <% if (locals.isLogged) { %>
+                    <div class=" img-name-login">
+                        <img src="/images/user-images/<%=locals.userLogged.img%>" class="imgcircle">
+                        <li><a href="/user/perfil/<%=locals.userLogged.id_user%>">¡Hola <%= locals.userLogged.firstname %>
+                                    <%= locals.userLogged.lastname %>!</a></li>
+                    </div>
+                    <% } else { %>
+                        <li><a href="/user/login">Ingresar <i class="fas fa-user"></i></a></li>
+                        <li><a href="/user/register">Registrarse <i class="fas fa-sign-in-alt"></i></a></li>
+                        <% } %>
+
+                            <li>
+                                <div class="carroCompras">
+                                    <a href="/productos/shopping-cart"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                                </div>
+                            </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="buscador">
+        <div class="input"><input placeholder="Buscar productos"></div>
+        <a href="#" class="botonBuscar"><i class="fas fa-search"></i></a>
+    </div>
+
+    <nav>
+        <ul class="barra">
+            <li><a href="#componentes">Componentes</a></li>
+            <li><a href="#perifericos">Periféricos</a></li>
+            <li><a href="#portatiles">Portátiles</a></li>
+            <li><a href="#pcArmadas">PC Armadas</a></li>
+        </ul>
+    </nav>
+</header>

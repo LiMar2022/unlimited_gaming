@@ -1,0 +1,169 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+header nav .barra {
+    display: none;
+}
+
+body {
+    background-color: white;
+    position: relative;
+    padding-bottom: 12vh;
+    min-height: 100vh;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main section .producto {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex-direction: column;
+    border: solid 3px #191068;
+    border-radius: 10px;
+    margin: 5vw 10vw 2vw 10vw;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+main h4 {
+    display: flex;
+    justify-content: center;
+    padding: 2vw;
+    font-size: 20px;
+}
+
+
+main section div .imagenProducto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-img {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+main section .imagenProducto {
+    box-shadow: 0px 0px 10px #191068;
+    background-color: #FFF;
+    max-width: 80%;
+    margin: 0 10%;
+    transition: 1s all;
+    text-align: center;
+    padding: 1%;
+}
+
+main section .imagenProducto:hover {
+    box-shadow: 0px 0px 20px #191068;
+}
+
+main section img {
+    max-width: 90%;
+    text-align: center;
+}
+
+main .caracteristicas {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 0vw 10vw 2vw 10vw;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: solid 3px #191068;
+    border-radius: 5px;
+}
+
+main .infoPerfil {
+    padding: 2.5vw;
+}
+
+main p {
+    padding: 2%;
+    text-align: justify;
+}
+
+.editarBorrar {
+    display: flex;
+    padding: 0vw 0vw 2.5vw 2.5vw;
+}
+
+main section .enlaceComprarEditar {
+    background-color: #ffff;
+    color: #c0fd68;
+    padding: 0.7vw;
+    background-color: #191068;
+    border: #191068 solid 1px;
+    border-radius: 10px;
+    font-size: 70%;
+    font-weight: bolder;
+    transition: all .8s;
+
+    text-decoration: none;
+}
+
+main section .enlaceComprarEditar:hover {
+    color: #191068;
+    background-color: #c0fd68
+}
+
+main form .botonEliminar {
+    margin-left: 10px;
+    background-color: #ffff;
+    color: #c0fd68;
+    padding: 0.7vw;
+    background-color: #191068;
+    border: #191068 solid 1px;
+    border-radius: 10px;
+    font-size: 70%;
+    font-weight: bolder;
+    transition: all .8s;
+}
+
+main form .botonEliminar:hover {
+    background-color: #c0fd68;
+    color: #191068;
+    transition: all .8s;
+}
+
+@media (min-width: 0px) {
+
+    main section .detalleProducto {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+    }
+}
+
+@media (min-width: 769px) {
+
+    main section .producto {
+        display: inline-block;
+        flex-direction: row;
+        width: 45%;
+        margin: 4vw 1vw 2vw 4vw;
+    }
+
+    main section .caracteristicas {
+        display: inline-block;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 45%;
+        margin: 4vw 4vw 2vw 1vw;
+        position: absolute;
+        top: auto;
+    }
+
+}

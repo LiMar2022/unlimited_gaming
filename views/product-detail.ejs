@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("./partials/head.ejs")%>
+        <link rel="stylesheet" href="/css/productDetail-styles.css">
+</head>
+
+<body background="/images/fondo-product-detail.avif">
+    <%- include ("./partials/header.ejs")%>
+
+
+        <main>
+            <section class="detalleProducto">
+                <article class="producto">
+                    <h4>
+                        <%=resultado.name%>
+                    </h4>
+                    <div class="meGustaCompartir">
+                        <a href=""><i class="far fa-heart"></i></a>
+                        <a href=""><i class="fas fa-share-alt"></i></a>
+                    </div>
+                    <div class="imagenProducto">
+                        <img src="/images/<%=resultado.img%>" />
+                    </div>
+                    <br>
+                    <div class="precio">
+                        <p>US$ <%=resultado.price%>
+                        </p>
+                    </div>
+                </article>
+                <article class="caracteristicas">
+                    <h4>Características</h4>
+                    <p>
+                        <%=resultado.description%>
+                    </p>
+
+                </article>
+                <article class="interacionProducto">
+                    <div class="cantidad">
+                        <label>Cantidad</label>
+                        <select name="categoria" class="cantidad">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <a class="carroComprasProduct"><i class="fas fa-cart-arrow-down"></i></a>
+                    <a class="enlaceComprarEditar" href="/productos/shopping-cart">Comprar</a>
+                    <a class="enlaceComprarEditar"
+                        href="/productos/edicion-de-producto/<%=resultado.id_product %>">Editar</a>
+                    <form action="/productos/delete/<%=resultado.id_product%>?_method=DELETE" method="POST">
+                        <button class="botonEliminar" type="submit" class="">Eliminar</button>
+                    </form>
+                </article>
+            </section>
+            <br>
+
+        </main>
+        <%- include ("./partials/footer.ejs")%>
+</body>
+
+</html>

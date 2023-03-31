@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("./partials/head.ejs")%>
+        <link rel="stylesheet" href="/css/perfil.css">
+</head>
+
+<body background="/images/fondo-product-detail.avif">
+    <header>
+        <div class="top">
+            <div class="burgerMenu">
+                <i class="fas fa-bars fa-2x"></i>
+            </div>
+            <div>
+                <a href="/"><img class="logo" src="/images/logo ug 2.jpg" /></a>
+            </div>
+            <nav>
+                <ul class="ingreso">
+
+                    <li>
+                        <div class="carroCompras">
+                            <a href="/productos/shopping-cart"><i class="fas fa-shopping-cart fa-2x"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="buttonSes">
+                            <a href="/user/logout">Cerrar sesión</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <nav>
+            <ul class="barra">
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="detalleProducto">
+
+            <article class="producto">
+                <h4>
+                    Hola <%=user.firstname%>
+                        <%=user.lastname%>
+                </h4>
+
+                <div class="user-img">
+                    <img src="/images/user-images/<%=user.img%>" />
+
+                </div>
+                <br>
+
+            </article>
+            <article class="caracteristicas">
+                <h4>Perfil</h4>
+                <div class=" infoPerfil">
+                    <h3>Email:</h3>
+                    <p>
+                        <%=user.email%>
+                    </p>
+
+                    <h3>Dirección:</h3>
+                    <p>
+                        <%=user.address%>
+                    </p>
+
+                    <h3>Nacimiento:</h3>
+                    <p>
+                        <%=user.birthday %>
+                    </p>
+                </div>
+                <div class="editarBorrar">
+                    <a class="enlaceComprarEditar" href="/user/edicion-perfil/<%=user.id_user %>">Editar</a>
+                    <form action="/user/delete/<%=user.id_user%>?_method=DELETE" method="POST">
+                        <button class="botonEliminar" type="submit" class="">Eliminar</button> </button>
+                    </form>
+
+                </div>
+
+            </article>
+
+        </section>
+        <br>
+
+    </main>
+    <%- include ("./partials/footer.ejs")%>
+</body>
+
+</html>

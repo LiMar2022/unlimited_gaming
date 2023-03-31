@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ("./partials/head.ejs")%>
+        <link rel="stylesheet" href="/css/register-styles.css">
+</head>
+
+<body background="/images/fondo-register.jpg">
+
+    <%- include ("./partials/header.ejs")%>
+
+        <main class="formulario">
+            <br>
+            <form action="/user/register" method="POST" enctype="multipart/form-data" charset=utf-8
+                class="formRegistro">
+                <div class="form-control">
+                    <label for="firstname">Nombre</label>
+                    <input type="text" name="firstname" id="firstname" class="firstname"
+                        value="<%= locals.old && old.firstname ? old.firstname:'' %>" placeholder="John">
+                    <% if (locals.errors && errors.firstname) { %>
+                        <div class="errores">
+                            <%= errors.firstname.msg%>
+                        </div>
+                        <% } %>
+                            <p class="errores"></p>
+                </div>
+                <br>
+                <div class="form-control">
+                    <label for="lastname">Apellido</label>
+                    <input type="text" id="lastname" name="lastname" class="lastname" placeholder="Doe"
+                        value="<%= locals.old && old.lastname ? old.lastname:'' %>">
+                    <% if (locals.errors && errors.lastname) { %>
+                        <div class="errores">
+                            <%= errors.lastname.msg%>
+                        </div>
+                        <% } %>
+                            <p class="errores"></p>
+                </div>
+                <br>
+                <div class="form-control">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" class="email" placeholder="correo@correo.com"
+                        value="<%= locals.old && old.email ? old.email:'' %>">
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="errores">
+                            <%= errors.email.msg%>
+                        </div>
+                        <% } %>
+                            <p class="errores"></p>
+                </div>
+                <br>
+                <div>
+                    <label for="birthday">Fecha de Nacimiento</label>
+                    <input type="date" id="birthday" name="birthday"
+                        value="<%= locals.old && old.birthday ? old.birthday:'' %>">
+                    <% if (locals.errors && errors.birthday) { %>
+                        <div class="errores">
+                            <%= errors.birthday.msg%>
+                        </div>
+                        <% } %>
+                </div>
+                <br>
+                <div>
+                    <label for="address">Domicilio</label>
+                    <input type="text" id="address" name="address" placeholder="calle 3 # 3-33"
+                        value="<%= locals.old && old.address ? old.address:'' %>">
+                    <% if (locals.errors && errors.address) { %>
+                        <div class="errores">
+                            <%= errors.address.msg%>
+                        </div>
+                        <% } %>
+                </div>
+                <br>
+                <div class="form-control">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" class="password" placeholder="Contraseña"
+                        minlength="5">
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="errores">
+                            <%= errors.password.msg%>
+                        </div>
+                        <% } %>
+                            <p class="errores"></p>
+                </div>
+                <br>
+                <div>
+                    <label for="confirmPassword">Confirmar Contraseña</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword"
+                        placeholder="Confirmar Contraseña">
+                    <% if (locals.errors && errors.confirmPassword) { %>
+                        <div class="errores">
+                            <%= errors.confirmPassword.msg%>
+                        </div>
+                        <% } %>
+                </div>
+                <br>
+                <div>
+                    <label>Tipo de Usuario</label>
+                    <select name="type" class="categoria">
+                        <option value="1">Comprador</option>
+                        <option value="2">Vendedor</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-control">
+                    <label for="img">Foto de Perfil</label>
+                    <input type="file" id="img" name="img" class="img">
+                    <p class="errores"></p>
+                </div>
+                <br>
+                <div class="buttonReg">
+                    <button type="submit">Registrarse</button>
+                    <button type="reset">Cancelar</button>
+                </div>
+            </form>
+        </main>
+
+        <%- include ("./partials/footer.ejs")%>
+
+            <script src="/js/validacionesRegistro.js"> </script>
+</body>
+
+</html>
